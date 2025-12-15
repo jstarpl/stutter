@@ -5,8 +5,6 @@ document.body.appendChild(canvas)
 
 const ctx = canvas.getContext('2d')!
 
-const BAR_COLOR = '#ffffff'
-
 // State
 let lastTimestamp = 0
 const history: { timestamp: number; duration: number }[] = []
@@ -68,6 +66,7 @@ function loop(timestamp: number) {
   requestAnimationFrame(loop)
 }
 
+// We start out with a reasonable default, it will scale to 3x the worst frame time
 let maxFrameTime = 60 // ms
 
 function drawGraph(currentTimestamp: number) {
@@ -86,7 +85,6 @@ function drawGraph(currentTimestamp: number) {
   ctx.lineWidth = 1
 
   // We map 5 seconds to graphWidth
-  // We map 0-33ms (approx 30fps) to graphHeight. 16.6ms is middle.
   
   let worstFrameTime = 0 // ms
 
