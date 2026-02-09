@@ -9,8 +9,30 @@ body {
   padding: 0;
   overflow: hidden; /* Prevent scrollbars */
   background: transparent;
+  color: black;
 }
 
 canvas {
   display: block; /* Remove inline-block spacing */
+}
+
+a {
+  color: #666;
+  text-decoration: none;
+}
+
+video {
+  display: block;
+}
+
+div.errror {
+  color: red;
+  white-space: pre-wrap;
+}
+
+#webcam video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
