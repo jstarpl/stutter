@@ -4,7 +4,7 @@ const output = document.getElementById("webcam");
 const error = document.getElementById("error");
 
 async function probe() {
-    await navigator.mediaDevices.getUserMedia({ video: true });
+    await navigator.mediaDevices.getUserMedia({ audio: true });
 }
 
 async function listDevices() {
